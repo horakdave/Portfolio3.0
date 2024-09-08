@@ -1,0 +1,299 @@
+:root {
+    --purple: #5E17EB;
+    --light-green: #BFFF00;
+    --text-color: #FFFFFF;
+    --font-main: 'Arial', sans-serif; /* Replace with your chosen font */
+  }
+  
+  body {
+    margin: 0;
+    padding-top: 80px; /* Add padding to account for the fixed header */
+    font-family: var(--font-main);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right, var(--purple) 75%, var(--light-green) 25%);
+  }
+  
+  .background-container {
+    flex-grow: 1;
+    background: linear-gradient(to right, var(--purple) 75%, var(--light-green) 25%);
+    position: relative;
+  }
+  
+  .background-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20%;
+    background-color: white;
+  }
+  
+  main {
+    position: relative;
+    z-index: 1;
+    min-height: calc(100vh - 80px); /* Subtract header height */
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: transparent; /* Make the background transparent */
+    height: 80px; /* Set a fixed height for the header */
+    box-sizing: border-box;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--light-green); /* Keep the logo color */
+  }
+  
+  .menu-toggle {
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    color: var(--purple); /* Keep the text color */
+    font-size: 2rem; /* Adjust size as needed */
+    cursor: pointer; /* Change cursor to pointer */
+    padding: 0; /* Remove padding */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack lines vertically */
+    align-items: center; /* Center align */
+  }
+  
+  .menu-toggle span {
+    display: block; /* Make each line a block */
+    width: 30px; /* Width of the lines */
+    height: 4px; /* Height of the lines */
+    background-color: var(--purple); /* Color of the lines */
+    margin: 2px 0; /* Space between lines */
+  }
+  
+  .hero {
+    height: 100vh; /* Ensure the hero section takes full height */
+    position: relative; /* Ensure positioning context */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center content vertically */
+  }
+  
+  .hero-content {
+    z-index: 2; /* Ensure content is above the white area */
+    padding-left: 100px; /* Move text to the right */
+    margin-top: -200px; /* Move text up slightly */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .hero-white-area {
+    position: absolute; /* Position it absolutely within the hero */
+    bottom: 0; /* Align it to the bottom */
+    left: 0;
+    right: 0;
+    height: 20%; /* Reduced height */
+    background-color: white; /* White background */
+    z-index: 1; /* Ensure it sits below the hero content */
+  }
+  
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--light-green);
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    line-height: 1.4; /* Adjusted line height for better readability */
+  }
+
+  .skills p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  .hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%; /* Adjust this value to make the image smaller */
+    max-width: 300px; /* Set a max width if needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image */
+    margin-bottom: 24px;
+  }
+  
+  .hero-image img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .hero-image::before,
+  .hero-image::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border: 2px solid var(--light-green);
+  }
+  
+  .hero-image::before {
+    top: -10px;
+    left: -10px;
+    z-index: 1;
+  }
+  
+  /* Decorative elements */
+  .hero-image .dots {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 100px;
+    height: 100px;
+    background-image: radial-gradient(var(--light-green) 2px, transparent 2px);
+    background-size: 10px 10px;
+    z-index: 0;
+  }
+  
+  .hero-image .line {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 50px;
+    height: 50px;
+    border-right: 2px solid var(--purple);
+    border-bottom: 2px solid var(--purple);
+    z-index: 4;
+  }
+  
+  @media (max-width: 768px) {
+    body {
+      background: var(--purple);
+    }
+    
+    header {
+      background: var(--purple);
+    }
+  
+    .hero {
+      grid-template-columns: 1fr;
+    }
+  }
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Rest of your existing styles remain unchanged */
+
+
+
+@media (max-width: 768px) {
+    .skills {
+        flex-direction: column;
+    }
+
+    .skill-item {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+#section2 {
+    background-color: white;
+    color: var(--purple);
+    padding: 40px; /* Adjust padding as needed */
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+    height: calc(100vh); /* Full viewport height minus the separator */
+    position: relative; /* Ensure positioning context */
+}
+
+.skill-item {
+    width: 35%; /* Adjust width as needed */
+    max-width: 350px; /* Adjust max-width as needed */
+    margin: 0 10px; /* Reduced margin to bring items closer */
+    position: relative; /* For positioning decorative elements */
+}
+
+.skill-item:first-child {
+    align-self: center;
+    margin-bottom: 200px;
+}
+
+.skill-item:last-child {
+    align-self: flex-start; /* Align Engineering to the top */
+    margin-top: 250px; /* Adjust this value to control vertical spacing */
+}
+
+.skill-item h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--purple);
+}
+
+.skill-item p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Decorative elements */
+.skill-item::before {
+    content: '';
+    position: absolute;
+    top: -20px; /* Adjust position as needed */
+    left: -20px; /* Adjust position as needed */
+    width: 100px; /* Width of the decorative element */
+    height: 100px; /* Height of the decorative element */
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 10%, transparent 10%); /* Neutral color */
+    background-size: 20px 20px; /* Size of the dots */
+}
+
+.skill-item:last-child::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; /* Adjust position as needed */
+    right: -20px; /* Adjust position as needed */
+    width: 100px; /* Width of the decorative element */
+    height: 100px; /* Height of the decorative element */
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 10%, transparent 10%); /* Neutral color */
+    background-size: 20px 20px; /* Size of the dots */
+}
+
+@media (max-width: 768px) {
+    #section2 {
+        flex-direction: column;
+        align-items: center; /* Center items on mobile */
+    }
+
+    .skill-item {
+        width: 80%; /* Adjust for mobile */
+        max-width: none;
+        margin: 0 0 2rem 0; /* Reset horizontal margin */
+    }
+
+    .skill-item:last-child {
+        margin-top: 0; /* Reset margin for mobile */
+    }
+}
