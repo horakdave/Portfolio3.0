@@ -1,13 +1,13 @@
 :root {
-    --purple: #5E17EB;
-    --light-green: #BFFF00;
+    --purple: #4831d4;
+    --light-green: #ccf381;
     --text-color: #FFFFFF;
-    --font-main: 'Arial', sans-serif; /* Replace with your chosen font */
+    --font-main: 'Arial', sans-serif;
   }
   
   body {
     margin: 0;
-    padding-top: 80px; /* Add padding to account for the fixed header */
+    padding-top: 80px;
     font-family: var(--font-main);
     color: var(--text-color);
     min-height: 100vh;
@@ -35,7 +35,7 @@
   main {
     position: relative;
     z-index: 1;
-    min-height: calc(100vh - 80px); /* Subtract header height */
+    min-height: calc(100vh - 80px);
   }
   
   header {
@@ -48,61 +48,62 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    background: transparent; /* Make the background transparent */
-    height: 80px; /* Set a fixed height for the header */
+    background: transparent;
+    height: 80px;
     box-sizing: border-box;
   }
   
   .logo {
     font-size: 2rem;
     font-weight: bold;
-    color: var(--light-green); /* Keep the logo color */
+    color: var(--light-green);
+    transition: color 0.3s ease, opacity 0.3s ease;
   }
   
   .menu-toggle {
-    background: none; /* Remove background */
-    border: none; /* Remove border */
-    color: var(--purple); /* Keep the text color */
-    font-size: 2rem; /* Adjust size as needed */
-    cursor: pointer; /* Change cursor to pointer */
-    padding: 0; /* Remove padding */
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: column; /* Stack lines vertically */
-    align-items: center; /* Center align */
+    background: none;
+    border: none;
+    color: var(--purple);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .menu-toggle span {
-    display: block; /* Make each line a block */
-    width: 30px; /* Width of the lines */
-    height: 4px; /* Height of the lines */
-    background-color: var(--purple); /* Color of the lines */
-    margin: 2px 0; /* Space between lines */
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: var(--purple);
+    margin: 2px 0;
   }
   
   .hero {
-    height: 100vh; /* Ensure the hero section takes full height */
-    position: relative; /* Ensure positioning context */
-    display: flex; /* Use flexbox for layout */
-    align-items: center; /* Center content vertically */
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
   }
   
   .hero-content {
-    z-index: 2; /* Ensure content is above the white area */
-    padding-left: 100px; /* Move text to the right */
-    margin-top: -200px; /* Move text up slightly */
+    z-index: 2;
+    padding-left: 100px;
+    margin-top: -200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
   
   .hero-white-area {
-    position: absolute; /* Position it absolutely within the hero */
-    bottom: 0; /* Align it to the bottom */
+    position: absolute;
+    bottom: 0;
     left: 0;
     right: 0;
-    height: 20%; /* Reduced height */
-    background-color: white; /* White background */
-    z-index: 1; /* Ensure it sits below the hero content */
+    height: 20%;
+    background-color: white;
+    z-index: 1;
   }
   
   h1 {
@@ -120,7 +121,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-    line-height: 1.4; /* Adjusted line height for better readability */
+    line-height: 1.4;
   }
 
   .skills p {
@@ -133,10 +134,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%; /* Adjust this value to make the image smaller */
-    max-width: 300px; /* Set a max width if needed */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center the image */
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
     margin-bottom: 24px;
   }
   
@@ -163,7 +164,6 @@
     z-index: 1;
   }
   
-  /* Decorative elements */
   .hero-image .dots {
     position: absolute;
     top: -20px;
@@ -204,10 +204,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Rest of your existing styles remain unchanged */
-
-
-
 @media (max-width: 768px) {
     .skills {
         flex-direction: column;
@@ -222,29 +218,29 @@ html {
 #section2 {
     background-color: white;
     color: var(--purple);
-    padding: 40px; /* Adjust padding as needed */
+    padding: 40px;
     display: flex;
-    justify-content: center; /* Center the items horizontally */
-    align-items: center; /* Center the items vertically */
-    height: calc(100vh); /* Full viewport height minus the separator */
-    position: relative; /* Ensure positioning context */
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh);
+    position: relative;
 }
 
 .skill-item {
-    width: 35%; /* Adjust width as needed */
-    max-width: 350px; /* Adjust max-width as needed */
-    margin: 0 10px; /* Reduced margin to bring items closer */
-    position: relative; /* For positioning decorative elements */
+    width: 35%;
+    max-width: 350px;
+    margin: 0 10px;
+    position: relative;
 }
 
 .skill-item:first-child {
     align-self: center;
-    margin-bottom: 200px;
+    margin-bottom: 300px;
 }
 
 .skill-item:last-child {
-    align-self: flex-start; /* Align Engineering to the top */
-    margin-top: 250px; /* Adjust this value to control vertical spacing */
+    align-self: flex-start;
+    margin-top: 150px;
 }
 
 .skill-item h2 {
@@ -258,42 +254,77 @@ html {
     line-height: 1.5;
 }
 
-/* Decorative elements */
 .skill-item::before {
     content: '';
     position: absolute;
-    top: -20px; /* Adjust position as needed */
-    left: -20px; /* Adjust position as needed */
-    width: 100px; /* Width of the decorative element */
-    height: 100px; /* Height of the decorative element */
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 10%, transparent 10%); /* Neutral color */
-    background-size: 20px 20px; /* Size of the dots */
+    top: -20px;
+    left: -20px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 10%, transparent 10%);
+    background-size: 20px 20px;
 }
 
 .skill-item:last-child::after {
     content: '';
     position: absolute;
-    bottom: -20px; /* Adjust position as needed */
-    right: -20px; /* Adjust position as needed */
-    width: 100px; /* Width of the decorative element */
-    height: 100px; /* Height of the decorative element */
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 10%, transparent 10%); /* Neutral color */
-    background-size: 20px 20px; /* Size of the dots */
+    bottom: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 10%, transparent 10%);
+    background-size: 20px 20px;
 }
 
 @media (max-width: 768px) {
     #section2 {
         flex-direction: column;
-        align-items: center; /* Center items on mobile */
+        align-items: center;
     }
 
     .skill-item {
-        width: 80%; /* Adjust for mobile */
+        width: 80%;
         max-width: none;
-        margin: 0 0 2rem 0; /* Reset horizontal margin */
+        margin: 0 0 2rem 0;
     }
 
     .skill-item:last-child {
-        margin-top: 0; /* Reset margin for mobile */
+        margin-top: 0;
     }
+}
+
+.decorative-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.decorative-dot {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--purple);
+    border-radius: 50%;
+}
+
+.decorative-line {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 100px;
+    height: 2px;
+    background-color: var(--purple);
+}
+
+.decorative-grid {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 150px;
+    height: 150px;
+    background-image: linear-gradient(var(--purple) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--purple) 1px, transparent 1px);
+    background-size: 20px 20px;
 }
