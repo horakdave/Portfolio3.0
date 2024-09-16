@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateAge() {
         const now = new Date();
         const ageInSeconds = Math.floor((now - birthDate) / 1000);
-        const age = (ageInSeconds / 31557600).toFixed(9).replace('.', ','); // czech ting
+        const age = (ageInSeconds / 31557600).toFixed(7).replace('.', ','); // czech ting
         ageCounter.textContent = age; // Update the age display
     }
 
