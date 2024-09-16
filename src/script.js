@@ -3,6 +3,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalSections = document.querySelectorAll('.section').length;
     const headerHeight = document.querySelector('header').offsetHeight;
     const logo = document.querySelector('.logo');
+    const menu = document.getElementById('menu');
+
+    const ageCounter = document.getElementById('age-counter');
+    const birthDate = new Date('2009-03-01T06:00:00'); // Date
+
+    function updateAge() {
+        const now = new Date();
+        const ageInSeconds = Math.floor((now - birthDate) / 1000);
+        const age = (ageInSeconds / 31557600).toFixed(9).replace('.', ','); // czech ting
+        ageCounter.textContent = age; // Update the age display
+    }
+
+    // Update age every second/1000
+    setInterval(updateAge, 1);
 
     window.addEventListener('wheel', function(event) {
         if (event.deltaY > 0 && currentSection < totalSections) {
@@ -39,4 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         event.preventDefault();
     }, { passive: false });
+
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        const isActive = menu.classList.toggle('show');
+        this.classList.toggle('active', isActive); // Rotation
+    });
 });
