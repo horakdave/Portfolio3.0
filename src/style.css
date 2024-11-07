@@ -360,3 +360,107 @@ html {
 .menu-toggle.active {
     transform: rotate(90deg); /* Rotate the button when active */
 }
+
+.timeline {
+    position: relative;
+    padding-left: 40px;
+    list-style: none;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--purple);
+}
+
+.timeline-date {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--dark-gray);
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: var(--purple);
+}
+
+.timeline-content p {
+    margin: 0;
+}
+
+.timeline-item.in-view {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.timeline-item {
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+.timeline-horizontal {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin: 20px 0;
+    align-items: center;
+}
+
+.timeline-line {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: var(--purple);
+    top: 50%; /* Center vertically */
+    z-index: 0; /* Ensure it's behind the buttons */
+}
+
+.timeline-button {
+    position: relative;
+    padding: 10px 20px;
+    background-color: var(--purple);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1; /* Higher than the line */
+}
+
+.timeline-button:hover {
+    background-color: var(--light-purple);
+}
+
+#language-details {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.timeline-button:nth-child(1) {
+    margin-top: -40px; /* Adjust the top position for HTML & CSS - Higher than the line */
+}
+
+.timeline-button:nth-child(2) {
+    top: -40px;
+}
+
+.timeline-button:nth-child(3) {
+    top: 40px;
+}
+
+.timeline-button:nth-child(4) {
+    top: -40px;
+}

@@ -58,4 +58,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const isActive = menu.classList.toggle('show');
         this.classList.toggle('active', isActive); // Rotation
     });
+
+    function showDetails(language) {
+        const details = {
+            'HTML': 'Started learning basic web development with HTML & CSS in 2018.',
+            'JavaScript': 'Began adding interactivity to web pages with JavaScript in 2019.',
+            'Python': 'Expanded into scripting and automation with Python in 2020.',
+            'C++': 'Started learning more complex programming concepts with C++ in 2021.'
+        };
+
+        const languageDetails = document.getElementById('language-details');
+        languageDetails.textContent = details[language] || 'No details available.';
+    }
 });
