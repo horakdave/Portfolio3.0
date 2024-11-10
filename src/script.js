@@ -25,6 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
             currentSection--;
         }
 
+        if (currentSection === 3) {
+            currentSection = 4; // Set it to the timeline section
+        } else if (currentSection > 4) {
+            currentSection = 1; // Reset to the first section if scrolled beyond the timeline
+        }
+
         const targetSection = document.getElementById(`section${currentSection}`);
         const targetPosition = targetSection.offsetTop;
 
