@@ -67,10 +67,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showDetails(language) {
         const details = {
-            'HTML': 'Started learning basic web development with HTML & CSS in 2018.',
-            'JavaScript': 'Began adding interactivity to web pages with JavaScript in 2019.',
+            'HTML': 'Started learning basic web development with HTML & CSS in 2023.',
+            'JavaScript': 'Began adding interactivity to web pages with JavaScript in 2024.',
             'Python': 'Expanded into scripting and automation with Python in 2020.',
-            'C++': 'Started learning more complex programming concepts with C++ in 2021.'
+            'C++': 'Started learning more complex programming concepts with C++ in 2023.'
         };
 
         const languageDetails = document.getElementById('language-details');

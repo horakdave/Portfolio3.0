@@ -422,8 +422,8 @@ html {
     height: 2px;
     width: 100%;
     background-color: var(--purple);
-    top: 50%; /* Center vertically */
-    z-index: 0; /* Ensure it's behind the buttons */
+    top: 50%;
+    z-index: 0;
 }
 
 .timeline-button {
@@ -435,7 +435,7 @@ html {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    z-index: 1; /* Higher than the line */
+    z-index: 1;
 }
 
 .timeline-button:hover {
@@ -450,7 +450,7 @@ html {
 }
 
 .timeline-button:nth-child(1) {
-    margin-top: -40px; /* Adjust the top position for HTML & CSS - Higher than the line */
+    margin-top: -40px;
 }
 
 .timeline-button:nth-child(2) {
@@ -463,4 +463,15 @@ html {
 
 .timeline-button:nth-child(4) {
     top: -40px;
+}
+
+.vertical-line {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: var(--purple);
+    left: 50%; /* Adjust position as needed */
+    transform: translateX(-50%);
+    z-index: 0;
+    /* Add additional styling for spacing and appearance */
 }
